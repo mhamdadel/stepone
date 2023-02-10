@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step-one</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        font-family: "Zeyada", cursive;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        transition: 0.7s;
+      }
+      body {
+        background-color: black;
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+      }
+      .container {
+        position: relative;
+      }
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 125%);
+        font-size: 18px;
+        color: black;
+        cursor: pointer;
+        font-weight: 900;
+      }
+      .center:hover::before {
+        content: "<< ";
+      }
+      .center:hover {
+        color: rgb(226, 47, 47);
+      }
+      .center:hover::after {
+        content: " >>";
+      }
+      img#bg {
+        max-height: 95vh;
+        width: auto;
+        opacity: 0.3;
+      }
+
+      img#logo {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img id="bg" src="./bg.jpg" alt="Cinque Terre" />
+      <img id="logo" src="./logo.jpg" alt="Cinque Terre" />
+      <div class="center" onclick="showBg(this)">New Captial</div>
+    </div>
+    <script>
+      let logo = document.getElementById("logo");
+      let center = document.getElementById("cover");
+      let bg = document.getElementById("bg");
+
+      function showBg(t) {
+        logo.style.display = "none";
+        t.style.display = "none";
+        bg.style.opacity = 1;
+      }
+    </script>
+  </body>
+</html>
